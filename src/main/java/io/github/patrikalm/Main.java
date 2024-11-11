@@ -99,6 +99,7 @@ public class Main {
          */
 
         //Exercise 6
+        /*
         Set<String> week = new HashSet<>();
 
         week.add("Monday");
@@ -116,6 +117,30 @@ public class Main {
         System.out.println(week);
 
         System.out.println(arrayListWeek);
+
+         */
+
+        //Exercise 7
+        Set<String> randomNames = new HashSet<>();
+
+        randomNames.add("Bear");
+        randomNames.add("John");
+        randomNames.add("Ben");
+        randomNames.add("Adam");
+        randomNames.add("Cesar");
+
+        System.out.println(randomNames);
+
+       /* List<String> sortingNames = new ArrayList<>();
+        sortingNames.addAll(randomNames);
+
+        Collections.sort(sortingNames);
+
+        System.out.println(sortingNames);
+        */
+
+        //Exercise 8
+
 
 
 
