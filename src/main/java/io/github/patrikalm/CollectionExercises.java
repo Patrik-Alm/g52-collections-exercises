@@ -6,7 +6,7 @@ public class CollectionExercises {
 
     public static void main(String[] args) {
 
-    ex8();
+    ex12();
 
     }
 
@@ -22,7 +22,10 @@ public class CollectionExercises {
         week.add("Saturday");
         week.add("Sunday");
 
-        System.out.println(week.toString());
+        for (String weekday : week) {
+
+            System.out.println(weekday);
+        }
     }
 
 
@@ -82,9 +85,25 @@ public class CollectionExercises {
 
         subWeek = week.subList(0, 3);
 
-        System.out.println(week);
+        Iterator itr = week.iterator();
 
-        System.out.println(subWeek);
+        System.out.println();
+        System.out.println("Here is the whole week from the ArrayList: ");
+
+        while (itr.hasNext()) {
+
+            System.out.println(itr.next());
+        }
+
+        Iterator itrSub = subWeek.iterator();
+
+        System.out.println();
+        System.out.println("Here is subpart of the week: ");
+
+        while (itrSub.hasNext()) {
+
+            System.out.println(itrSub.next());
+        }
     }
 
     public static void ex5() {
@@ -100,14 +119,22 @@ public class CollectionExercises {
         week.add("Saturday");
         week.add("Sunday");
 
-        System.out.println(week);
+        System.out.println();
+        System.out.println("Here is the whole week from the HashSet: ");
+
+        Iterator itr = week.iterator();
+
+        while (itr.hasNext()) {
+
+            System.out.println(itr.next());
+        }
     }
 
     public static void ex6() {
         Set<String> week = new HashSet<>();
 
         week.add("Monday");
-        week.add("Thursday");
+        week.add("Tuesday");
         week.add("Wednesday");
         week.add("Thursday");
         week.add("Friday");
@@ -118,9 +145,10 @@ public class CollectionExercises {
 
         arrayListWeek.addAll(week);
 
-        System.out.println(week);
-
-        System.out.println(arrayListWeek);
+        System.out.println();
+        System.out.println("Here is the HashSet week: " + week);
+        System.out.println();
+        System.out.println("Here is the ArrayList week: " + arrayListWeek);
 
     }
 
@@ -141,10 +169,17 @@ public class CollectionExercises {
 
         sortedNames.addAll(randomNames);
 
-        if
+        Collections.sort(sortedNames, String.CASE_INSENSITIVE_ORDER);
 
+        System.out.println();
+        System.out.println("Here is a sorted Arraylist: ");
 
-        System.out.println("Here is a sorted Arraylist: " + sortedNames);
+        Iterator itr = sortedNames.iterator();
+
+        while (itr.hasNext()) {
+
+            System.out.println(itr.next());
+        }
     }
 
     public static void ex8() {
@@ -157,15 +192,107 @@ public class CollectionExercises {
         randomNames.add("Johan");
         randomNames.add("Edmund");
 
+        System.out.println("Here is the HashSet and not sorted: " + randomNames);
+
         Set<String> sortedNames = new TreeSet<>();
 
         sortedNames.addAll(randomNames);
 
-        System.out.println("Here is the HashSet and not sorted: " + randomNames);
+
 
         System.out.println("Here is the TreeSet and sorted: " + sortedNames);
 
     }
 
+    public static void ex9() {
 
+        HashMap<Integer, String> carBrands = new HashMap<>();
+
+        carBrands.put(1,"Volvo");
+        carBrands.put(2,"BMW");
+        carBrands.put(3,"Ford");
+        carBrands.put(4,"Nissan");
+        carBrands.put(5,"Tesla");
+
+        Iterator itr = carBrands.entrySet().iterator();
+
+        System.out.println();
+        System.out.println("Here is the map with car brands: ");
+
+        while (itr.hasNext()) {
+
+            System.out.println(itr.next());
+        }
+
+
+    }
+
+    public static void ex10() {
+
+        HashMap<Integer, String> carIdBrands = new HashMap<>();
+
+        carIdBrands.put(10, "Jeep");
+        carIdBrands.put(11, "Hyundai");
+        carIdBrands.put(12, "KIA");
+        carIdBrands.put(13, "VolkWagen");
+        carIdBrands.put(14, "Chevrolet");
+        carIdBrands.put(15, "Peugeot");
+
+        System.out.println();
+        System.out.println("Here is the map with car brands, with the key only: ");
+
+        Iterator itr = carIdBrands.keySet().iterator();
+
+        while (itr.hasNext()) {
+
+            System.out.println(itr.next());
+        }
+
+    }
+
+    public static void ex11() {
+
+        HashMap<Integer, String> carIdBrands = new HashMap<>();
+
+        carIdBrands.put(10, "Jeep");
+        carIdBrands.put(11, "Hyundai");
+        carIdBrands.put(12, "KIA");
+        carIdBrands.put(13, "VolkWagen");
+        carIdBrands.put(14, "Chevrolet");
+        carIdBrands.put(15, "Peugeot");
+
+        System.out.println();
+        System.out.println("Here is the map with car brands, with the values only: ");
+
+        Iterator itr = carIdBrands.values().iterator();
+
+        while (itr.hasNext()) {
+
+            System.out.println(itr.next());
+        }
+
+    }
+
+    public static void ex12() {
+
+        HashMap<Integer, Car> carIdBrands = new HashMap<>();
+
+        carIdBrands.put(10, new Car(1, "Jeep", "Cherokee"));
+        carIdBrands.put(11, new Car(2, "Hyundai", "Santa Fe"));
+        carIdBrands.put(12, new Car(3, "KIA", "Sportage"));
+        carIdBrands.put(13, new Car(4,"VolkWagen", "Passat"));
+        carIdBrands.put(14, new Car(5,"Chevrolet", "Camaro"));
+        carIdBrands.put(15, new Car(6,"Peugeot", "407"));
+
+        System.out.println();
+        System.out.println("Here is the map with car brands, with the key only: ");
+
+        Iterator itr = carIdBrands.keySet().iterator();
+
+        while (itr.hasNext()) {
+
+            System.out.println((itr.next()));
+        }
+
+    }
 }
