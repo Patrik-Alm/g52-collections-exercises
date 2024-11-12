@@ -287,11 +287,9 @@ public class CollectionExercises {
         System.out.println();
         System.out.println("Here is the map with car brands, with the key only: ");
 
-        Iterator itr = carIdBrands.keySet().iterator();
+        for (Car car : carIdBrands.values()) {
 
-        while (itr.hasNext()) {
-
-            System.out.println((itr.next()));
+            System.out.println(car.getBrand());
         }
 
     }
