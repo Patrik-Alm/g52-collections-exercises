@@ -6,7 +6,7 @@ public class CollectionChallenges {
 
     public static void main(String[] args) {
 
-        ch4();
+        ch3();
     }
 
     public static void ch1() {
@@ -81,7 +81,8 @@ public class CollectionChallenges {
 
         }
 
-        superHeroes.sort(SuperHero::compareTo);
+        superHeroes.sort(null);
+
 
         System.out.println();
         System.out.println("Superheroes arraylist sorted: ");

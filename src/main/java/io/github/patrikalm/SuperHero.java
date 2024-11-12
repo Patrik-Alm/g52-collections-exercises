@@ -1,6 +1,9 @@
 package io.github.patrikalm;
 
-public class SuperHero {
+import java.util.Collections;
+import java.util.Comparator;
+
+public class SuperHero implements Comparable<SuperHero> {
 
 
     int id;
@@ -49,17 +52,14 @@ public class SuperHero {
     }
 
 
+    @Override
+    public int compareTo(SuperHero hero) {
 
-    public int compareTo(SuperHero superHero) {
-
-        if (age > superHero.age) {
+        if (age > hero.age) {
             return 1;
-        } else if ( age < superHero.age) {
+        } else if (age < hero.age) {
             return -1;
         }
         return 0;
     }
-
-
-
 }
