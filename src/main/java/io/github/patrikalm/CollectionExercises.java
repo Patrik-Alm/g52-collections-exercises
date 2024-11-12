@@ -6,6 +6,7 @@ public class CollectionExercises {
 
     public static void main(String[] args) {
 
+    ex8();
 
     }
 
@@ -134,12 +135,37 @@ public class CollectionExercises {
         randomNames.add("Adam");
         randomNames.add("Cesar");
 
-        System.out.println(randomNames);
+        System.out.println("Here is the set not sorted: " + randomNames);
 
+        ArrayList<String> sortedNames = new ArrayList<>();
+
+        sortedNames.addAll(randomNames);
+
+        if
+
+
+        System.out.println("Here is a sorted Arraylist: " + sortedNames);
     }
 
+    public static void ex8() {
 
-    //Exercise 8
+        Set<String> randomNames = new HashSet<>();
+
+        randomNames.add("Torbjörn");
+        randomNames.add("Karl");
+        randomNames.add("Henrik");
+        randomNames.add("Johan");
+        randomNames.add("Edmund");
+
+        Set<String> sortedNames = new TreeSet<>();
+
+        sortedNames.addAll(randomNames);
+
+        System.out.println("Here is the HashSet and not sorted: " + randomNames);
+
+        System.out.println("Here is the TreeSet and sorted: " + sortedNames);
+
+    }
 
 
 }
